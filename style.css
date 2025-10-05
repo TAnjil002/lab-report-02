@@ -1,0 +1,604 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Banner Section */
+#banner {
+  height: 100vh;
+  background: linear-gradient(
+      rgba(0, 0, 0, 0.7),
+      rgba(0, 0, 0, 0.7)
+    ),
+    url('https://images.unsplash.com/photo-1503264116251-35a269479413?auto=format&fit=crop&w=1600&q=80')
+    center/cover no-repeat;
+  color: #fff;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Centered Photo Wrapper */
+.photo-wrapper {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  margin: 0 auto 30px;
+}
+
+/* Profile Photo */
+.profile-photo {
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 4px solid #00d9ff;
+  box-shadow: 0 0 25px rgba(0, 217, 255, 0.7);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 3;
+}
+
+.profile-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/*  Animated Rings */
+.ring {
+  position: absolute;
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  border: 3px solid rgba(0, 217, 255, 0.6);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  filter: drop-shadow(0 0 10px #00d9ff);
+}
+
+/* Left Ring animation */
+.ring-left {
+  animation: moveLeft 4s linear infinite;
+}
+
+/* Right Ring animation */
+.ring-right {
+  animation: moveRight 4s linear infinite;
+}
+
+/* Keyframes for Rings */
+@keyframes moveLeft {
+  0% { transform: translate(-50%, -50%) rotate(0deg) translateX(0); }
+  25% { transform: translate(-70%, -50%) rotate(90deg) translateX(20px); }
+  50% { transform: translate(-50%, -50%) rotate(180deg) translateX(0); }
+  75% { transform: translate(-30%, -50%) rotate(270deg) translateX(-20px); }
+  100% { transform: translate(-50%, -50%) rotate(360deg) translateX(0); }
+}
+
+@keyframes moveRight {
+  0% { transform: translate(-50%, -50%) rotate(0deg) translateX(0); }
+  25% { transform: translate(-30%, -50%) rotate(-90deg) translateX(-20px); }
+  50% { transform: translate(-50%, -50%) rotate(-180deg) translateX(0); }
+  75% { transform: translate(-70%, -50%) rotate(-270deg) translateX(20px); }
+  100% { transform: translate(-50%, -50%) rotate(-360deg) translateX(0); }
+}
+
+/* Text styling */
+.highlight {
+  color: #00d9ff;
+}
+
+.fade-in {
+  opacity: 0;
+  animation: fadeIn 1.5s ease-in forwards;
+}
+
+.fade-in-delay {
+  opacity: 0;
+  animation: fadeIn 2.5s ease-in forwards;
+}
+
+@keyframes fadeIn {
+  to { opacity: 1; }
+}
+
+.slide-up {
+  opacity: 0;
+  transform: translateY(30px);
+  animation: slideUp 1.8s ease-out forwards;
+}
+
+@keyframes slideUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Buttons */
+.btn-primary {
+  background-color: #00d9ff;
+  border: none;
+  transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+  background-color: #00b3cc;
+  transform: scale(1.05);
+}
+
+.btn-outline-light {
+  border: 2px solid #fff;
+  color: #fff;
+  transition: all 0.3s ease;
+}
+
+.btn-outline-light:hover {
+  background-color: #fff;
+  color: #000;
+  transform: scale(1.05);
+}
+
+/* ============================
+   View My Work Section (Updated)
+============================ */
+#projects {
+  background-color: #0a0f14; 
+  color: #fff;
+  padding-top: 80px; 
+  padding-bottom: 80px;
+}
+.mb-5 text-muted{
+    color: white;
+}
+
+.section-title {
+  font-size: 2.5rem; 
+  margin-bottom: 1rem;
+  display: inline-block;
+  position: relative;
+}
+
+.section-title::after {
+  content: "";
+  display: block;
+  width: 60%;
+  height: 3px;
+  background-color: #00d9ff; 
+  margin: 10px auto 0;
+  border-radius: 2px;
+}
+
+/* Project Cards */
+.project-card {
+  background-color: #111821; 
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 0 15px rgba(0, 217, 255, 0.15);
+  transition: all 0.4s ease;
+  cursor: pointer;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.project-card img {
+  width: 100%;
+  height: 250px; 
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.project-info {
+  padding: 20px;
+  text-align: left;
+  flex-grow: 1;
+}
+
+.project-info h5 {
+  color: #00d9ff; 
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.project-info p {
+  color: #aaa; 
+  font-size: 0.95rem;
+}
+
+/* Hover Effects */
+.project-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 0 30px rgba(0, 217, 255, 0.25);
+}
+
+.project-card:hover img {
+  transform: scale(1.05);
+}
+
+
+/* ============================
+   Skills Section 
+============================ */
+#skills {
+  position: relative;
+  background: radial-gradient(circle at top, #0d1b2a, #000814);
+  color: #fff;
+  overflow: hidden;
+  z-index: 1;
+}
+
+/* Section Title */
+.section-title {
+  position: relative;
+  display: inline-block;
+}
+
+.section-title span.highlight {
+  color: #00eaff;
+}
+
+.section-title::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: -10px;
+  width: 60%;
+  height: 4px;
+  background-color: #00eaff;
+  border-radius: 2px;
+}
+
+/* Floating Neon Orbs */
+.orb {
+  position: absolute;
+  border-radius: 50%;
+  opacity: 0.2;
+  filter: blur(70px);
+  z-index: 0;
+  animation: float 15s infinite ease-in-out;
+}
+
+.orb1 {
+  width: 300px;
+  height: 300px;
+  background: #00eaff;
+  top: 10%;
+  left: 15%;
+  animation-delay: 0s;
+}
+
+.orb2 {
+  width: 250px;
+  height: 250px;
+  background: #ff00ff;
+  bottom: 10%;
+  right: 10%;
+  animation-delay: 4s;
+}
+
+.orb3 {
+  width: 200px;
+  height: 200px;
+  background: #00ff80;
+  bottom: 30%;
+  left: 5%;
+  animation-delay: 7s;
+}
+
+/* Floating motion animation */
+@keyframes float {
+  0% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(40px) rotate(180deg); }
+  100% { transform: translateY(0px) rotate(360deg); }
+}
+
+/* Grid lines for futuristic feel */
+.grid-line {
+  position: absolute;
+  width: 100%;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.05);
+  left: 0;
+  animation: moveLines 10s linear infinite;
+}
+
+.grid-line-1 { top: 25%; }
+.grid-line-2 { top: 60%; }
+
+@keyframes moveLines {
+  0% { transform: translateX(0); opacity: 0.2; }
+  50% { transform: translateX(20px); opacity: 0.6; }
+  100% { transform: translateX(0); opacity: 0.2; }
+}
+
+/* Skill Cards  */
+
+.skill-card {
+  position: relative;
+  z-index: 1;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  padding: 35px 15px;
+  transition: all 0.4s ease;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.skill-card::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: -100%;
+  background: linear-gradient(120deg, transparent, rgba(0, 234, 255, 0.4), transparent);
+  transition: all 0.5s ease;
+}
+
+.skill-card:hover::before {
+  left: 100%;
+}
+
+.skill-card:hover {
+  transform: translateY(-10px) scale(1.05);
+  border-color: #00eaff;
+  box-shadow: 0 0 25px rgba(0, 234, 255, 0.3);
+}
+
+.skill-card i {
+  font-size: 3rem;
+  color: #00eaff;
+  margin-bottom: 10px;
+  transition: all 0.3s ease;
+}
+
+.skill-card:hover i {
+  color: #fff;
+  text-shadow: 0 0 20px #00eaff;
+}
+
+.skill-card h5 {
+  font-weight: 600;
+  margin-top: 10px;
+}
+
+/*  Scroll & Fade Animations */
+.fade-up {
+  opacity: 0;
+  transform: translateY(40px);
+  animation: fadeUp 1s forwards;
+}
+
+@keyframes fadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.delay-1 { animation-delay: 0.2s; }
+.delay-2 { animation-delay: 0.4s; }
+.delay-3 { animation-delay: 0.6s; }
+.delay-4 { animation-delay: 0.8s; }
+.delay-5 { animation-delay: 1s; }
+.delay-6 { animation-delay: 1.2s; }
+.delay-7 { animation-delay: 1.4s; }
+.delay-8 { animation-delay: 1.6s; }
+
+
+/* ============================
+   Contact Me Section
+============================ */
+#contact {
+  background-color: #0a0f14; 
+  color: #fff;
+  padding-top: 80px;
+  padding-bottom: 80px;
+  padding-left: 80px;
+  padding-right: 80px;
+}
+
+.contact-form {
+  background-color: #111821; 
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 0 25px rgba(0, 217, 255, 0.15);
+}
+
+.contact-form .form-label {
+  color: #00d9ff; 
+  font-weight: 500;
+}
+
+.contact-form .form-control {
+  background-color: #1b2230; 
+  border: 1px solid #00d9ff;
+  color: #fff;
+  border-radius: 8px;
+  padding: 12px;
+  transition: all 0.3s ease;
+}
+
+.contact-form .form-control:focus {
+  background-color: #1b2230;
+  border-color: #00b3cc;
+  box-shadow: 0 0 8px rgba(0, 217, 255, 0.5);
+  color: #fff;
+}
+
+.contact-form textarea.form-control {
+  resize: none;
+}
+
+.contact-form .btn-primary {
+  background-color: #00d9ff;
+  border: none;
+  transition: all 0.3s ease;
+  padding: 12px 40px;
+}
+
+.contact-form .btn-primary:hover {
+  background-color: #00b3cc;
+  transform: scale(1.05);
+}
+
+
+/* ============================
+   Footer Section
+============================ */
+#footer {
+  background: #0a0f14;
+  color: #fff;
+  overflow: hidden;
+  position: relative;
+}
+
+/* Footer background orbs */
+.footer-orb {
+  position: absolute;
+  border-radius: 50%;
+  opacity: 0.15;
+  filter: blur(60px);
+  z-index: 0;
+  animation: float 18s infinite ease-in-out;
+}
+
+.footer-orb.orb1 {
+  width: 200px;
+  height: 200px;
+  background: #00d9ff;
+  top: 10%;
+  left: 10%;
+  animation-delay: 0s;
+}
+
+.footer-orb.orb2 {
+  width: 150px;
+  height: 150px;
+  background: #ff00ff;
+  bottom: 10%;
+  right: 10%;
+  animation-delay: 5s;
+}
+
+/* Use existing float animation keyframes */
+@keyframes float {
+  0% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(20px) rotate(180deg); }
+  100% { transform: translateY(0) rotate(360deg); }
+}
+
+/* Footer Title */
+.footer-title {
+  position: relative;
+  z-index: 1;
+  color: #00d9ff;
+}
+
+/* Social Icons */
+.social-links {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  z-index: 1;
+  position: relative;
+}
+
+.social-icon {
+  color: #fff;
+  font-size: 1.2rem;
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.social-icon:hover {
+  color: #00d9ff;
+  transform: scale(1.2);
+  text-shadow: 0 0 12px #00d9ff;
+}
+
+/* Small text */
+#footer p.small {
+  z-index: 1;
+  position: relative;
+  font-size: 0.85rem;
+}
+
+
+
+/* ============================
+   💎💎💎Responsive💎💎💎
+============================ */
+
+@media (max-width: 768px) {
+  .photo-wrapper {
+    width: 160px;
+    height: 160px;
+  }
+
+  .ring {
+    width: 140px;
+    height: 140px;
+    margin-top: 50px;
+  }
+
+  .profile-photo {
+    width: 110px;
+    height: 110px;
+    margin-top: 50px;
+  }
+
+  #banner h1 {
+    font-size: 2rem;
+  }
+
+  #banner p {
+    font-size: 1rem;
+  }
+
+  /* View my works */
+  #projects .section-title {
+    font-size: 2rem;
+  }
+
+  .project-card img {
+    height: 200px;
+  }
+
+  .col-md-6 {
+    max-width: 100%;
+    flex: 0 0 100%;
+  }
+  /* My Skill Section */
+  .skill-card {
+    padding: 25px 10px;
+  }
+  .skill-card i {
+    font-size: 2.2rem;
+  }
+
+  /* Contact me section */
+  .contact-form {
+    padding: 20px;
+  }
+
+  /* Footer section */
+  .social-links { gap: 15px; }
+  .social-icon { font-size: 1rem; }
+  
+}
+
+
